@@ -5,6 +5,7 @@
         <title>Unilag exam calculator</title>
         <link rel="icon" href="unilag-logo.jpeg" type="img/jpeg">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <header>
@@ -12,17 +13,18 @@
             <img src="unilag-logo.jpeg">
             <h1>Unilag Exam Calculator</h1>
         </header>
-        <div class="exams">
-            <button class="big_button">calculate post-utme aggregate</button><br>
+        <div class="exams" id="postjamb">
+            <button class="big_button">Calculate Admission Aggregate</button><br>
             <div id="grades" class="container">
                 <label for="username">Enter your first name: </label><br>
                 <input type="text" id="username"><br>
                 <label for="jamb_score">Enter your J.A.M.B score: </label><br>
-                <input type="number" id="jamb_score"><br>
+                <input type="number" id="jamb_score" maxlength="3" ><br>
                 <label for="postjamb_score">Enter your post-J.A.M.B score: </label><br>
-                <input type="number" id="postjamb_score"><br>
+                <input type="number" id="postjamb_score" maxlength="2"><br>
+                <!-- maxlength not taking effect-->
                 <label>select the grades of your five (5) required subjects</label><br>
-                <select>
+                <select id="select1">
                     <option>A1</option>
                     <option>B2</option>
                     <option>B3</option>
@@ -30,7 +32,7 @@
                     <option>C5</option>
                     <option>C6</option>
                 </select>
-                <select>
+                <select id="select2">
                     <option>A1</option>
                     <option>B2</option>
                     <option>B3</option>
@@ -38,7 +40,7 @@
                     <option>C5</option>
                     <option>C6</option>
                 </select>
-                <select>
+                <select id="select3">
                     <option>A1</option>
                     <option>B2</option>
                     <option>B3</option>
@@ -46,7 +48,7 @@
                     <option>C5</option>
                     <option>C6</option>
                 </select>
-                <select>
+                <select id="select4">
                     <option>A1</option>
                     <option>B2</option>
                     <option>B3</option>
@@ -54,7 +56,7 @@
                     <option>C5</option>
                     <option>C6</option>
                 </select>
-                <select>
+                <select id="select5">
                     <option>A1</option>
                     <option>B2</option>
                     <option>B3</option>
@@ -62,11 +64,11 @@
                     <option>C5</option>
                     <option>C6</option>
                 </select><br>
-                <button id="calculate">calculate</button>
+                <button id="calculate" class="action">calculate</button>
             </div>
         </div>
         <div class="exams">
-            <button class="big_button">calculate C.G.P.A</button>
+            <button class="big_button">Calculate C.G.P.A</button>
             <div id="cgpa" class="container"><p>Sorry, this service is unavailable at the moment</p></div>
         </div>
         
