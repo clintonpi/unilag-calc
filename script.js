@@ -30,7 +30,7 @@ window.onload = function() {
         })();
 
         /*   validation   */
-        if (isNaN(aggregate) || jambscore.length > 3 || jambscore === '' || pjscore.length > 2 || pjscore === '' ) {
+        if (isNaN(aggregate) || jambscore.length > 3 || jambscore > 400 || jambscore === '' || pjscore.length > 2 || pjscore === '' || pjscore > 30) {
             alert('please, check your inputs!');
         } else {
             grades.style.display = 'none';
