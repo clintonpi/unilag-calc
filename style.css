@@ -110,7 +110,7 @@ select {
 }
 
 
-#calculate {
+.action {
     width: 30%;
     padding: 2px;
     margin: 0 35% 2px;
@@ -121,7 +121,7 @@ select {
     transition: .3s;
 }
 
-#calculate:hover {
+.action:hover {
     width: 96%;
     margin: 0 2% 2px;
     background-color: #ff4d4d;
@@ -130,10 +130,16 @@ select {
     letter-spacing: 7px;
 }
 
-#cgpa p {
+p {
     padding: 5px;
     margin: 0;
     font-size: 14px;
+    text-align: center;
+}
+
+span {
+    color: white;
+    font-size: 18px;
 }
 
 footer {
