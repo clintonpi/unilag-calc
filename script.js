@@ -7,8 +7,8 @@ window.onload = function() {
     calculate.onclick = function() {
 
         const username = document.getElementById('username').value;
-        const jambscore = document.getElementById('jamb_score').value;
-        const pjscore = document.getElementById('postjamb_score').value;
+        const jamb = document.getElementById('jamb').value;
+        const postjamb = document.getElementById('postjamb').value;
         
         const s1 = document.getElementById('select1').value;
         const s2 = document.getElementById('select2').value;
@@ -26,16 +26,15 @@ window.onload = function() {
             }
             const waec = selector(s1) + selector(s2) + selector(s3) + selector(s4) + selector(s5);
             
-            return parseFloat(parseFloat(jambscore / 8) + parseInt(pjscore) + parseFloat(waec)); 
+            return parseFloat(parseFloat(jamb / 8) + parseInt(postjamb) + parseFloat(waec)); 
         })();
 
         /*   validation   */
-        if (isNaN(aggregate) || jambscore.length > 3 || jambscore > 400 || jambscore < 0 || jambscore === '' || pjscore.length > 2 || pjscore < 0 || pjscore === '' || pjscore > 30) {
+        if (isNaN(aggregate) || jamb.length > 3 || jamb > 400 || jamb < 0 || jamb === '' || postjamb.length > 2 || postjamb < 0 || postjamb === '' || postjamb > 30) {
             alert('please, check your inputs!');
         } else {
             grades.style.display = 'none';
-            postjamb.innerHTML += '<p>Hi! <span>' + username + '</span>, your aggregate is <span>' + aggregate + '</span>.</p> <a href="index.html"><button id="goback" class="action">go back</button></a>';
+            admission.innerHTML += '<p>Hi! <span>' + username + '</span>, your aggregate is <span>' + aggregate + '</span>.</p> <a href="index.html"><button id="goback" class="action">go back</button></a>';
         }
     }
 }
-   

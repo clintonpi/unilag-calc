@@ -61,7 +61,7 @@ header h1 {
     visibility: visible;
 }
 
-.big_button {
+.big-button {
     width: 100%;
     padding: 5px 10px;
     margin: 0 0 10px;
@@ -73,7 +73,7 @@ header h1 {
     border: 2px solid #ff4d4d;
 }
 
-.big_button:hover {
+.big-button:hover {
     background-color: #ff4d4d;
     color: white;
     cursor: pointer;
