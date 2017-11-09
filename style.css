@@ -3,6 +3,7 @@ body {
     font-family: sans-serif;
     padding: 0;
     margin: 0;
+    min-width: 260px;
 }
 
 header {
@@ -150,10 +151,70 @@ footer {
     padding: 5px 0 0;
     box-sizing: border-box;
     margin: 0;
-    position: fixed;
+    position: absolute;
     bottom: 0px;
 }
 
 footer a {
    color: white;
+}
+
+/************
+media queries
+************/
+
+/*big tablets*/
+@media screen and (max-width: 1200px) {
+    .exams {
+        width: 40%;
+    }
+
+    .action, .action:hover {
+        margin-top: 10px;
+    }
+}
+
+/*tablets*/
+@media screen and (max-width: 800px) {
+    .exams {
+        width: 50%;
+    }
+
+    .action, .action:hover {
+        margin-top: 10px;
+    }
+}
+
+/*big mobiles*/
+@media screen and (max-width: 650px) {
+    .exams {
+        width: 75%;
+    }
+
+    .action, .action:hover {
+        margin-top: 10px;
+    }
+}
+
+/*mobiles*/
+@media screen and (max-width: 400px) {
+    .exams {
+        width: 98%;
+    }
+
+    .action, .action:hover {
+        margin-top: 10px;
+    }
+}
+
+
+
+/*all that won't show footer on full screen*/
+
+@media screen and (max-height: 650px) {
+    footer {
+        position: relative;
+        bottom: 0;
+    }
+
 }
