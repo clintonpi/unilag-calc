@@ -30,7 +30,7 @@
         return sum;
     };
 
-    document.querySelector('#calculate-btn').onclick = () => {
+    document.querySelector('#calculate').onclick = () => {
         let waecGrades = getWaecGrades();
 
         let waecScore = calculateWaecScore(waecGrades);
@@ -40,7 +40,7 @@
         if (jambInput === '' || parseInt(jambInput) > 400 || parseInt(jambInput) < 0) {
             alert('enter a valid J.A.M.B score');
             return;
-        } 
+        }; 
 
         let jambScore = parseInt(jambInput) / 8;
 

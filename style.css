@@ -51,84 +51,105 @@ header h1 {
     font-size: 25px;
     padding: 0;
     margin: 10px 0;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .4);
 }
 
-.exams {
-    padding: 0 0 3px;
-    margin: 25px auto;
-    width: 30%;
-    background-color: rgba(0,0,0,.4);
-    border-radius: 10px;
-    visibility: visible;
+#container {
+    width: 40%;
+    padding: 0 10px;
+    margin: 10px auto;
 }
 
-.big-button {
-    width: 100%;
-    padding: 5px 10px;
-    margin: 0 0 10px;
-    font-size: 20px;
-    font-weight: 300;
-    background-color: white;
-    color: #ff4d4d;
-    border-radius: 10px;
-    border: 2px solid #ff4d4d;
-}
-
-.big-button:hover {
-    background-color: #ff4d4d;
+#result {
+    width: 80%;
+    padding: 5px;
+    margin: 0 auto 10px;
+    font-size: 18px;
+    border-radius: 5px;
     color: white;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(225,225,225,.5);
+    background-color: #ff4d4d;
+    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
 }
+
+#scores {
+    width: 75%;
+    padding: 20px 5px 60px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .4);
+    box-sizing: border-box;
+}
+
+
+
+#wrap {
+    background-color: white;
+    width: 110px;
+    height: 110px;
+    padding: 5px;
+    margin: auto;
+    border-radius: 100%;
+    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
+    box-sizing: border-box;
+    position: relative;
+    top: -55px;
+}
+
+#load {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    margin: auto;
+    border-radius: 100%;
+    border-top: 5px solid rgba(0, 0, 0, .4);
+    border-bottom: 5px solid rgba(0, 0, 0, .4);
+    border-left: 5px solid #ff4d4d;
+    border-right: 5px solid #ff4d4d;
+    box-sizing: border-box;
+    position: absolute;
+    animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+    100%{transform: rotate(360deg);}
+}
+
+
+#calculate {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #ff4d4d;
+    padding-top: 31px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+#calculate:hover {
+    cursor: pointer;
+    color: rgba(0, 0, 0, .4);;
+}
+
 
 label {
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-}
-
-#display-area {
-    width: 100%;
-    padding: 0 5px;
-    box-sizing: border-box;
-    margin: 0;
-    height: auto;
-    text-align: left;
+    font-size: 15px;
 }
 
 input {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-input[type="number"] {
-    margin: 0 0 3px;
+    width: 80%;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
 }
 
 select {
-    width: 15%;
-    margin: 0 0 1% 3.5%;
-}
-
-
-.action-btn {
-    width: 30%;
+    margin: 5px;
     padding: 2px;
-    margin: 0 35% 2px;
-    background-color: white;
-    color: #ff4d4d;
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: .3s;
-}
-
-.action-btn:hover {
-    width: 96%;
-    margin: 0 2% 2px;
-    background-color: #ff4d4d;
-    color: white;
-    cursor: pointer;
-    letter-spacing: 7px;
 }
 
 p {
@@ -136,11 +157,6 @@ p {
     margin: 0;
     font-size: 14px;
     text-align: center;
-}
-
-span {
-    color: white;
-    font-size: 18px;
 }
 
 footer {
@@ -152,7 +168,7 @@ footer {
     box-sizing: border-box;
     margin: 0;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
 }
 
 footer a {
@@ -163,7 +179,7 @@ footer a {
 media queries
 ************/
 
-/*big tablets*/
+/*big tablets
 @media screen and (max-width: 1200px) {
     .exams {
         width: 40%;
@@ -174,7 +190,7 @@ media queries
     }
 }
 
-/*tablets*/
+/*tablets
 @media screen and (max-width: 800px) {
     .exams {
         width: 50%;
@@ -185,7 +201,7 @@ media queries
     }
 }
 
-/*big mobiles*/
+/*big mobiles
 @media screen and (max-width: 650px) {
     .exams {
         width: 75%;
@@ -196,7 +212,7 @@ media queries
     }
 }
 
-/*mobiles*/
+/*mobiles
 @media screen and (max-width: 400px) {
     .exams {
         width: 98%;
@@ -211,10 +227,10 @@ media queries
 
 /*all that won't show footer on full screen*/
 
-@media screen and (max-height: 650px) {
+/* @media screen and (max-height: 650px) {
     footer {
         position: relative;
         bottom: 0;
     }
 
-}
+} */

@@ -13,9 +13,9 @@
             <img src="unilag-logo.jpeg">
             <h1>Unilag Exam Calculator</h1>
         </header>
-        <div class="exams" id="admission">
-            <div id="result" class="result"></div>
-            <div id="display-area" class="container">
+        <div id="container">
+            <div id="result">Your result should appear here</div>
+            <div id="scores">
                 <label for="jamb">Enter your J.A.M.B score: </label><br>
                 <input type="number" id="jamb" maxlength="3" ><br>
                 <label for="postjamb">Enter your post-J.A.M.B score: </label><br>
@@ -25,7 +25,7 @@
                 <select id="select1">
                     <option>A1</option>
                     <option>B2</option>
-                    <option>B3</option>
+                    <option>B3</option>  
                     <option>C4</option>
                     <option>C5</option>
                     <option>C6</option>
@@ -63,11 +63,11 @@
                     <option>C6</option>
                 </select><br>
             </div>
+            <div id="wrap">
+                <div id="load"></div>
+                <div id="calculate">Calculate</div>
+            </div>
         </div>
-        <div class="exams">
-            <button class="big-button" id="calculate-btn">Calculate</button>
-        </div>
-        
         <footer>visit our official website at: 
         <br> <a href="https://unilag.edu.ng/">unilag.edu.ng</a></footer>
         <script src="script.js"></script>
