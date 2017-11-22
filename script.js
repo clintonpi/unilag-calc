@@ -57,7 +57,10 @@
 
         let roundedTotalScore = totalScore.toFixed(2);
 
-        document.querySelector('#result').innerHTML = 'Your score is ' + roundedTotalScore;
+        let result = document.querySelector('#result');
+        result.innerHTML = 'Your score is ' + roundedTotalScore;
+        result.style.backgroundColor = '#ff4d4d';
+        result.style.color = 'white';
     };
 
 

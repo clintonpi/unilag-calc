@@ -53,34 +53,27 @@ header h1 {
     margin: 10px 0;
 }
 
-#container {
-    width: 40%;
-    padding: 0 10px;
-    margin: 10px auto;
-}
-
 #result {
-    width: 80%;
+    width: 35%;
     padding: 5px;
-    margin: 0 auto 10px;
+    margin: 10px auto 10px;
     font-size: 18px;
     border-radius: 5px;
-    color: white;
-    background-color: #ff4d4d;
+    color: #ff4d4d;
+    background-color: white;
+    border: 3px solid #ff4d4d;
     box-shadow: 0 0  15px rgba(0, 0, 0, .4);
 }
 
 #scores {
-    width: 75%;
-    padding: 20px 5px 60px;
+    width: 30%;
+    padding: 20px 2px 60px;
     margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0 0  15px rgba(0, 0, 0, .4);
     background-color: rgba(0, 0, 0, .4);
     box-sizing: border-box;
 }
-
-
 
 #wrap {
     background-color: white;
@@ -178,47 +171,47 @@ footer a {
 media queries
 ************/
 
-/*big tablets
+/*big tablets*/
 @media screen and (max-width: 1200px) {
-    .exams {
+    #result {
+        width: 45%;
+    }
+
+    #scores {
         width: 40%;
     }
-
-    .action, .action:hover {
-        margin-top: 10px;
-    }
 }
 
-/*tablets
+/*tablets*/
 @media screen and (max-width: 800px) {
-    .exams {
+    #result {
+        width: 55%;
+    }
+
+    #scores {
         width: 50%;
     }
-
-    .action, .action:hover {
-        margin-top: 10px;
-    }
 }
 
-/*big mobiles
+/*big mobiles*/
 @media screen and (max-width: 650px) {
-    .exams {
+    #result {
+        width: 80%;
+    }
+
+    #scores {
         width: 75%;
     }
-
-    .action, .action:hover {
-        margin-top: 10px;
-    }
 }
 
-/*mobiles
+/*mobiles*/
 @media screen and (max-width: 400px) {
-    .exams {
-        width: 98%;
+    #result {
+        width: 95%;
     }
 
-    .action, .action:hover {
-        margin-top: 10px;
+    #scores {
+        width: 90%;
     }
 }
 
@@ -226,10 +219,10 @@ media queries
 
 /*all that won't show footer on full screen*/
 
-/* @media screen and (max-height: 650px) {
+@media screen and (max-height: 625px) {
     footer {
         position: relative;
         bottom: 0;
     }
 
-} */
+}
