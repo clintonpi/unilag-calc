@@ -65,6 +65,19 @@ header h1 {
     box-shadow: 0 0  15px rgba(0, 0, 0, .4);
 }
 
+#result2 {
+    width: 35%;
+    padding: 5px;
+    margin: 10px auto 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: white;
+    background-color: #ff4d4d;
+    border: 3px solid #ff4d4d;
+    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
+    animation: wiggle .2s linear;
+}
+
 #scores {
     width: 30%;
     padding: 20px 2px 60px;
@@ -77,8 +90,8 @@ header h1 {
 
 #wrap {
     background-color: white;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     padding: 5px;
     margin: auto;
     border-radius: 100%;
@@ -88,43 +101,26 @@ header h1 {
     top: -55px;
 }
 
-#load {
-    width: 100px;
-    height: 100px;
-    padding: 5px;
-    margin: auto;
+#calculate {
+    background-color: white;
+    width: 90px;
+    height: 90px;
     border-radius: 100%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #ff4d4d;
     border-top: 5px solid rgba(0, 0, 0, .4);
     border-bottom: 5px solid rgba(0, 0, 0, .4);
     border-left: 5px solid #ff4d4d;
     border-right: 5px solid #ff4d4d;
-    box-sizing: border-box;
-    position: absolute;
-    animation: spin 2s infinite linear;
-}
-
-@keyframes spin {
-    100%{transform: rotate(360deg);}
-}
-
-
-#calculate {
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    color: #ff4d4d;
     padding-top: 31px;
     box-sizing: border-box;
-    transition: .5s;
 }
 
 #calculate:hover {
     cursor: pointer;
-    color: rgba(0, 0, 0, .4);;
+    color: rgba(0, 0, 0, .4);
 }
 
 
@@ -135,6 +131,7 @@ label {
 input {
     width: 80%;
     margin: 5px;
+    height: 20px;
     padding: 2px;
     text-align: center;
 }
@@ -173,7 +170,7 @@ media queries
 
 /*big tablets*/
 @media screen and (max-width: 1200px) {
-    #result {
+    #result, #result2 {
         width: 45%;
     }
 
@@ -184,7 +181,7 @@ media queries
 
 /*tablets*/
 @media screen and (max-width: 800px) {
-    #result {
+    #result, #result2 {
         width: 55%;
     }
 
@@ -195,7 +192,7 @@ media queries
 
 /*big mobiles*/
 @media screen and (max-width: 650px) {
-    #result {
+    #result, #result2 {
         width: 80%;
     }
 
@@ -206,7 +203,7 @@ media queries
 
 /*mobiles*/
 @media screen and (max-width: 400px) {
-    #result {
+    #result, #result2 {
         width: 95%;
     }
 
