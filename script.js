@@ -30,7 +30,9 @@
         return sum;
     };
 
+
     document.querySelector('#calculate').onclick = () => {
+        
         let waecGrades = getWaecGrades();
 
         let waecScore = calculateWaecScore(waecGrades);
@@ -58,11 +60,16 @@
         let roundedTotalScore = totalScore.toFixed(2);
 
         let result = document.querySelector('#result');
-        result.innerHTML = 'Your score is ' + roundedTotalScore;
-        result.style.backgroundColor = '#ff4d4d';
-        result.style.color = 'white';
+        result.innerHTML = `Your score is ${roundedTotalScore}`;
+        result.setAttribute('id', 'result2');
+        
+        setTimeout(() => {
+            result.setAttribute('id', 'result');
+        }, 500);
+        
+        
     };
 
-
-
+    
+    
 })();
