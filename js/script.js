@@ -1,75 +1,95 @@
 (() => {
+  // focus on input when window loads
+  const utmeInput = document.querySelector('#utme-input');
+  utmeInput.focus();
 
-    const getWaecGrades = () => {
-        let s1 = document.querySelector('#select1').value;
-        let s2 = document.querySelector('#select2').value;
-        let s3 = document.querySelector('#select3').value;
-        let s4 = document.querySelector('#select4').value;
-        let s5 = document.querySelector('#select5').value;
+  // get utme aggregate
+  const getUtmeAgg = () => {
+    // get utme score
+    const utmeScore = parseInt(utmeInput.value);
+    // validate
+    if(utmeScore > 400) {
+      return;
+    }
+    // calculate utme aggregate
+    const utmeAgg  = parseFloat((utmeScore / 8).toFixed(2));
+    return utmeAgg;
+  };
 
-        return [ s1, s2, s3, s4, s5 ];
+  // get post utme score
+  const pUtmeScore = () => {
+    // get post utme score
+    const pUtmeInput = document.querySelector('#p-utme-input');
+    const pUtmeScore = parseInt(pUtmeInput.value);
+    // validate
+    if(pUtmeScore > 30) {
+      return;
+    }
+    return pUtmeScore;
+  };
 
-    };
+  // get waec aggregate
+  const getWaecAgg = () =>  {
+    const grades = Array.from(document.querySelectorAll('.waec-grades'));
+    const waecAgg = grades
+      .map(grade => parseFloat(grade.value))
+      .reduce((grade, sum) => grade += sum, 0);
+    return waecAgg;
+  };
 
-    const GRADES = {
-        'A1': 4.0,
-        'B2': 3.6,
-        'B3': 3.2,
-        'C4': 2.8,
-        'C5': 2.4,
-        'C6': 2.0
-    };
+  // get total aggregate
+  const totalAgg = (utmeAgg, pUtmeScore, waecAgg) => parseFloat(utmeAgg + pUtmeScore + waecAgg).toFixed(2);
 
+  // get flipping cards
+  const front = document.querySelector('#front');
+  const back = document.querySelector('#back');
 
-    const calculateWaecScore = (grades) => {
-        let sum = 0;
-        grades.forEach((grade) => {
-            let score = parseFloat(GRADES[grade]);
-            sum += score;
-        });
-        return sum;
-    };
+  // get forms
+  const details = document.querySelector('#details');
+  const result = document.querySelector('#result');
+  
+  // remove message
+  const messageWrap = document.querySelector('#message-wrap');
+  messageWrap.addEventListener('click', () => {
+    messageWrap.style.display = 'none';
+  });
 
+  // listen for submit events on details form
+  details.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    document.querySelector('#calculate').onclick = () => {
-        
-        let waecGrades = getWaecGrades();
+    const utme = getUtmeAgg();
+    const pUtme = pUtmeScore();
+    const waec = getWaecAgg();
 
-        let waecScore = calculateWaecScore(waecGrades);
+    const message = document.querySelector('#message');
 
-        let jambInput = document.querySelector('#jamb').value;
+    // display message
+    if (!utme) {
+      messageWrap.style.display = 'flex';
+      message.innerHTML = '<p>Please enter a valid U.T.M.E score.</p><p>Click anywhere to remove this message.</p>';
+      return;
+    } else if (!pUtme) {
+      messageWrap.style.display = 'flex';
+      message.innerHTML = '<p>Please enter a valid Post U.T.M.E score.</p><p>Click anywhere to remove this message.</p>';
+      return;
+    }
 
-        if (jambInput === '' || parseInt(jambInput) > 400 || parseInt(jambInput) < 0) {
-            alert('enter a valid J.A.M.B score');
-            return;
-        }; 
+    // show result
+    document.querySelector('#inner-circle').innerHTML = totalAgg(utme, pUtme, waec);
+    front.classList.add('at-back');
+    back.classList.remove('at-back');
+    result.firstElementChild.focus();
+  });
 
-        let jambScore = parseInt(jambInput) / 8;
+  // listen for submit event on result form
+  result.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-        let postJambInput = document.querySelector('#post-jamb').value;
+    details.reset();
+    utmeInput.focus();
+    back.classList.add('at-back');
+    front.classList.remove('at-back');
+  });
 
-        if (postJambInput === ''  || parseInt(postJambInput) > 30 || parseInt(postJambInput) < 0) {
-            alert('enter a valid post-J.A.M.B score');
-            return;
-        } 
-
-        let postJambScore = parseInt(postJambInput);
-
-        let totalScore = jambScore + postJambScore + waecScore;
-
-        let roundedTotalScore = totalScore.toFixed(2);
-
-        let result = document.querySelector('#result');
-        result.innerHTML = `Your score is ${roundedTotalScore}`;
-        result.setAttribute('id', 'result2');
-        
-        setTimeout(() => {
-            result.setAttribute('id', 'result');
-        }, 500);
-        
-        
-    };
-
-    
-    
 })();

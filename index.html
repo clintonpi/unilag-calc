@@ -1,75 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Unilag exam calculator</title>
-        <link rel="icon" href="unilag-logo.jpeg" type="img/jpeg">
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <header>
-            <div id="nav"></div>
-            <img src="unilag-logo.jpeg">
-            <h1>Unilag Exam Calculator</h1>
-        </header>
-        <div id="container">
-            <div id="result">Your result should appear here</div>
-            <div id="scores">
-                <label for="jamb">Enter your J.A.M.B score: </label><br>
-                <input type="number" id="jamb" maxlength="3" ><br>
-                <label for="post-jamb">Enter your post-J.A.M.B score: </label><br>
-                <input type="number" id="post-jamb" maxlength="2"><br>
-                <!-- maxlength not taking effect-->
-                <label>select the grades of your five (5) required subjects</label><br>
-                <select id="select1">
-                    <option>A1</option>
-                    <option>B2</option>
-                    <option>B3</option>  
-                    <option>C4</option>
-                    <option>C5</option>
-                    <option>C6</option>
-                </select>
-                <select id="select2">
-                    <option>A1</option>
-                    <option>B2</option>
-                    <option>B3</option>
-                    <option>C4</option>
-                    <option>C5</option>
-                    <option>C6</option>
-                </select>
-                <select id="select3">
-                    <option>A1</option>
-                    <option>B2</option>
-                    <option>B3</option>
-                    <option>C4</option>
-                    <option>C5</option>
-                    <option>C6</option>
-                </select>
-                <select id="select4">
-                    <option>A1</option>
-                    <option>B2</option>
-                    <option>B3</option>
-                    <option>C4</option>
-                    <option>C5</option>
-                    <option>C6</option>
-                </select>
-                <select id="select5">
-                    <option>A1</option>
-                    <option>B2</option>
-                    <option>B3</option>
-                    <option>C4</option>
-                    <option>C5</option>
-                    <option>C6</option>
-                </select><br>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Admission Aggregate Calculator">
+    <meta name="author" content="Clinton Nkwocha">
+    <meta name="keywords" content="unilag, university of lagos, university, of, lagos, admission aggregate calculator, admission, aggregate, calculator, unilag-calc">
+    <title>Admission Aggregate Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.png" type="imgage/png">
+    <link rel="stylesheet" href="./css/reset.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>Admission Aggregate Calculator</h1>
+      </header>
+      <main>
+        <div id="background"></div>
+        <div class="wrap">
+          <div id="back" class="card at-back">
+            <h2>Your Aggregate: </h2>
+            <div id="circle">
+              <div id="inner-circle">
+              </div>
             </div>
-            <div id="wrap">
-                <div id="load"></div>
-                <div id="calculate">Calculate</div>
-            </div>
+            <form id="result">
+              <input type="submit" value="Reset" id="reset" class="input activate">
+            </form>
+          </div>
+          <div id="front" class="card">
+            <h2>Input Your Details</h2>
+            <form id="details">
+              <label for="utme-input">
+                U.T.M.E Score
+              </label>
+              <br>
+              <input type="number" name="utme-input" id="utme-input" class="input" required>
+              <br>
+              <label for="p-utme-input">
+                Post U.T.M.E Score
+              </label>
+              <br>
+              <input type="number" name="p-utme-input" id="p-utme-input" class="input" required>
+              <br>
+              <label>
+                Select O'Level grades
+              </label>
+              <br>
+              <div id="select-wrap">
+                <select class="waec-grades">
+                  <option value="4.0">A1</option>
+                  <option value="3.6">B2</option>
+                  <option value="3.2">B3</option>
+                  <option value="2.8">C4</option>
+                  <option value="2.4">C5</option>
+                  <option value="2.0">C6</option>
+                </select>
+                <select class="waec-grades">
+                  <option value="4.0">A1</option>
+                  <option value="3.6">B2</option>
+                  <option value="3.2">B3</option>
+                  <option value="2.8">C4</option>
+                  <option value="2.4">C5</option>
+                  <option value="2.0">C6</option>
+                </select>
+                <select class="waec-grades">
+                  <option value="4.0">A1</option>
+                  <option value="3.6">B2</option>
+                  <option value="3.2">B3</option>
+                  <option value="2.8">C4</option>
+                  <option value="2.4">C5</option>
+                  <option value="2.0">C6</option>
+                </select>
+                <select class="waec-grades">
+                  <option value="4.0">A1</option>
+                  <option value="3.6">B2</option>
+                  <option value="3.2">B3</option>
+                  <option value="2.8">C4</option>
+                  <option value="2.4">C5</option>
+                  <option value="2.0">C6</option>
+                </select>
+                <select class="waec-grades">
+                  <option value="4.0">A1</option>
+                  <option value="3.6">B2</option>
+                  <option value="3.2">B3</option>
+                  <option value="2.8">C4</option>
+                  <option value="2.4">C5</option>
+                  <option value="2.0">C6</option>
+                </select>
+              </div>
+              <input type="submit" value="Calculate" id="submit" class="input activate">
+            </form>
+          </div>
         </div>
-        <footer>visit our official website at: 
-        <br> <a href="https://unilag.edu.ng/">unilag.edu.ng</a></footer>
-        <script src="script.js"></script>
-    </body>
+        <div id="message-wrap">
+          <div id="message">
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>Made with <b>&#9829;</b> by <a href="https://clintonpi.github.io" target="_blank">Clinton Nkwocha</a>
+        </p>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
 </html>

@@ -1,225 +1,201 @@
+:root {
+  --colorb: rgba(0, 0, 0, .6);
+  --colorw: white;
+  --border: 2px solid var(--colorb);
+  --font: 'Zilla Slab', serif;
+  --margin: 5vh;
+}
+
 body {
-    text-align: center;
-    font-family: sans-serif;
-    padding: 0;
-    margin: 0;
-    min-width: 260px;
+  font-family: var(--font);
+  font-size: 16px;
+  min-width: 220px;
 }
 
 header {
-    padding: 0;
-    margin: 0;
-    border-bottom: 5px solid rgba(0,0,0,.4);
+  width: 100%;
+  padding: 10px 0;
+  min-height: 8vh;
+  background-color: var(--colorb);
+  text-align: center;
+  line-height: 8vh;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
 }
-
-#nav {
-    padding: 0;
-    margin: 0 0 15px;
-    background-color: #ff4d4d;
-    border-bottom: 3px solid rgba(0,0,0,.4);
-    width: 100%;
-    height: 45px;
-}
-
-header img {
-    width: 100px;
-    padding: 0;
-    margin: 0;
-    border-radius: 100%;
-    transition: 1s;
-}
-
-header img:hover {
-    animation: wiggle 3s;   
-}
-
-@keyframes wiggle {
-    5%{ transform: rotate(5deg);}
-    35%{ transform: rotate(-10deg);}
-    55%{ transform: rotate(10deg);}
-    60%{ transform: rotate(-10deg);}
-    65%{ transform: rotate(10deg);}
-    70%{ transform: rotate(-10deg);}
-    75%{ transform: rotate(10deg);}
-    80%{ transform: rotate(-10deg);}
-    85%{ transform: rotate(10deg);}
-}    
 
 header h1 {
-    color: #ff4d4d;
-    font-weight: 300;
-    font-size: 25px;
-    padding: 0;
-    margin: 10px 0;
+  font-size: 3rem;
+  color: var(--colorw);
 }
 
-#result {
-    width: 35%;
-    padding: 5px;
-    margin: 10px auto 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    color: #ff4d4d;
-    background-color: white;
-    border: 3px solid #ff4d4d;
-    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
+#background {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  border-top: 50vh solid transparent;
+  border-right: 50vw solid rgba(0, 0, 0, .07);
+  border-bottom: 50vh solid rgba(0, 0, 0, .03);
+  border-left: 50vw solid rgba(0, 0, 0, .03);
 }
 
-#result2 {
-    width: 35%;
-    padding: 5px;
-    margin: 10px auto 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    color: white;
-    background-color: #ff4d4d;
-    border: 3px solid #ff4d4d;
-    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
-    animation: wiggle .2s linear;
+.wrap {
+  position: relative;
+  width: 600px;
+  min-width: auto;
+  max-width: 95%;
+  height: auto;
+  margin: calc(var(--margin) * 2) auto var(--margin);
 }
 
-#scores {
-    width: 30%;
-    padding: 20px 2px 60px;
-    margin: 0 auto;
-    border-radius: 5px;
-    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
-    background-color: rgba(0, 0, 0, .4);
-    box-sizing: border-box;
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorw);
+  border-radius: 5px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, .2);
+  padding: 20px 5px;
+  text-align: center;
+  transition: .5s;
 }
 
-#wrap {
-    background-color: white;
-    width: 100px;
-    height: 100px;
-    padding: 5px;
-    margin: auto;
-    border-radius: 100%;
-    box-shadow: 0 0  15px rgba(0, 0, 0, .4);
-    box-sizing: border-box;
-    position: relative;
-    top: -55px;
+.card h2 {
+  font-size: 2rem;
 }
 
-#calculate {
-    background-color: white;
-    width: 90px;
-    height: 90px;
-    border-radius: 100%;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    color: #ff4d4d;
-    border-top: 5px solid rgba(0, 0, 0, .4);
-    border-bottom: 5px solid rgba(0, 0, 0, .4);
-    border-left: 5px solid #ff4d4d;
-    border-right: 5px solid #ff4d4d;
-    padding-top: 31px;
-    box-sizing: border-box;
+#back {
+  position: absolute;
 }
 
-#calculate:hover {
-    cursor: pointer;
-    color: rgba(0, 0, 0, .4);
+#front {
+  position: relative;
 }
 
-
-label {
-    font-size: 15px;
+#circle {
+  width: 200px;
+  height: 200px;
+  background-color: var(--colorw);
+  border: 10px solid var(--colorb);
+  display: flex;
+  border-radius: 100%;
+  margin: var(--margin) auto;
 }
 
-input {
-    width: 80%;
-    margin: 5px;
-    height: 20px;
-    padding: 2px;
-    text-align: center;
+#inner-circle {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  color: var(--colorw);
+  font-size: 4rem;
+  background-color: var(--colorb);
+  margin: auto;
+  border-radius: 100%;
 }
 
-select {
-    margin: 5px;
-    padding: 2px;
+.at-back {
+  transform: rotateY(-180deg);
+  opacity: 0;
+  z-index: -1;
 }
 
-p {
-    padding: 5px;
-    margin: 0;
-    font-size: 14px;
-    text-align: center;
+#reset {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.input {
+  text-align: center;
+  width: 80%;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-family: var(--font);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.activate {
+  color: var(--colorw);
+  background-color: var(--colorb);
+  border: 2px solid var(--colorw);
+  border-radius: 5px;
+  transition: .3s;
+}
+
+.activate:hover {
+  background-color: var(--colorw);
+  color: var(--colorb);
+  border: var( --border);
+  cursor: pointer;
+}
+
+#details {
+  margin-top: var(--margin);
+}
+
+#details input[type="number"] {
+  margin-bottom: var(--margin);
+  border: transparent;
+  border-bottom: var( --border);
+}
+
+#select-wrap {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  margin: auto;
+}
+
+#details select {
+  margin: 2vh auto;
+  font-family: var(--font);
+}
+
+#message-wrap {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  padding: 5px;
+  top: 0;
+  display: none;
+  background-color: var(--colorb);
+}
+
+#message {
+  width: auto;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  color: var(--colorw);
+  background-color: rgba(0, 0, 0, .8);
+  border-radius: 5px;
+}
+
+#message p:first-child {
+  font-size: 1.5rem;
 }
 
 footer {
-    width: 100%;
-    height: 45px;
-    background-color: rgba(0,0,0,.4);
-    border-top: 2px solid #ff4d4d;
-    padding: 5px 0 0;
-    box-sizing: border-box;
-    margin: 0;
-    position: absolute;
-    bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
+} 
+
+footer b, footer a {
+  color: var(--colorb);
 }
 
-footer a {
-   color: white;
-}
+/* media queries */
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
 
-/************
-media queries
-************/
-
-/*big tablets*/
-@media screen and (max-width: 1200px) {
-    #result, #result2 {
-        width: 45%;
-    }
-
-    #scores {
-        width: 40%;
-    }
-}
-
-/*tablets*/
-@media screen and (max-width: 800px) {
-    #result, #result2 {
-        width: 55%;
-    }
-
-    #scores {
-        width: 50%;
-    }
-}
-
-/*big mobiles*/
-@media screen and (max-width: 650px) {
-    #result, #result2 {
-        width: 80%;
-    }
-
-    #scores {
-        width: 75%;
-    }
-}
-
-/*mobiles*/
-@media screen and (max-width: 400px) {
-    #result, #result2 {
-        width: 95%;
-    }
-
-    #scores {
-        width: 90%;
-    }
-}
-
-
-
-/*all that won't show footer on full screen*/
-
-@media screen and (max-height: 625px) {
-    footer {
-        position: relative;
-        bottom: 0;
-    }
-
+  .card h2 {
+    font-size: 1.2rem;
+  }
 }
