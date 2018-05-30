@@ -7,10 +7,6 @@
   const getUtmeAgg = () => {
     // get utme score
     const utmeScore = parseInt(utmeInput.value);
-    // validate
-    if(utmeScore > 400) {
-      return;
-    }
     // calculate utme aggregate
     const utmeAgg  = parseFloat((utmeScore / 8).toFixed(2));
     return utmeAgg;
@@ -21,10 +17,6 @@
     // get post utme score
     const pUtmeInput = document.querySelector('#p-utme-input');
     const pUtmeScore = parseInt(pUtmeInput.value);
-    // validate
-    if(pUtmeScore > 30) {
-      return;
-    }
     return pUtmeScore;
   };
 
@@ -47,12 +39,6 @@
   // get forms
   const details = document.querySelector('#details');
   const result = document.querySelector('#result');
-  
-  // remove message
-  const messageWrap = document.querySelector('#message-wrap');
-  messageWrap.addEventListener('click', () => {
-    messageWrap.style.display = 'none';
-  });
 
   // listen for submit events on details form
   details.addEventListener('submit', (e) => {
@@ -61,19 +47,6 @@
     const utme = getUtmeAgg();
     const pUtme = pUtmeScore();
     const waec = getWaecAgg();
-
-    const message = document.querySelector('#message');
-
-    // display message
-    if (!utme) {
-      messageWrap.style.display = 'flex';
-      message.innerHTML = '<p>Please enter a valid U.T.M.E score.</p><p>Click anywhere to remove this message.</p>';
-      return;
-    } else if (!pUtme) {
-      messageWrap.style.display = 'flex';
-      message.innerHTML = '<p>Please enter a valid Post U.T.M.E score.</p><p>Click anywhere to remove this message.</p>';
-      return;
-    }
 
     // show result
     document.querySelector('#inner-circle').innerHTML = totalAgg(utme, pUtme, waec);
