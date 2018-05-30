@@ -42,10 +42,26 @@
     const waec = getWaecAgg();
 
     // show result
-    document.querySelector('#inner-circle').innerHTML = totalAgg(utme, pUtme, waec);
     front.classList.add('at-back');
     back.classList.remove('at-back');
     result.firstElementChild.focus();
+
+    const showScore = (() => {
+      const innerCircle = document.querySelector('#inner-circle');      
+      const score = totalAgg(utme, pUtme, waec);
+      let i = 0.00;
+
+      const increment = setInterval(function() {
+        i += 1.23;
+        innerCircle.innerHTML = i.toFixed(2);
+
+        if (i >= score) {
+          innerCircle.innerHTML = score;
+          clearInterval(increment);
+        }
+      }, 25);
+    })();
+    
   });
 
   // listen for submit event on result form
