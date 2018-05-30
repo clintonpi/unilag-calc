@@ -8,25 +8,18 @@
     // get utme score
     const utmeScore = parseInt(utmeInput.value);
     // calculate utme aggregate
-    const utmeAgg  = parseFloat((utmeScore / 8).toFixed(2));
-    return utmeAgg;
+    return parseFloat((utmeScore / 8).toFixed(2));
   };
 
   // get post utme score
-  const pUtmeScore = () => {
-    // get post utme score
-    const pUtmeInput = document.querySelector('#p-utme-input');
-    const pUtmeScore = parseInt(pUtmeInput.value);
-    return pUtmeScore;
-  };
+  const pUtmeScore = () => parseInt(document.querySelector('#p-utme-input').value);
 
   // get waec aggregate
   const getWaecAgg = () =>  {
     const grades = Array.from(document.querySelectorAll('.waec-grades'));
-    const waecAgg = grades
+    return grades
       .map(grade => parseFloat(grade.value))
       .reduce((grade, sum) => grade += sum, 0);
-    return waecAgg;
   };
 
   // get total aggregate
