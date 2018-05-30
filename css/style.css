@@ -139,6 +139,7 @@ header h1 {
   margin-bottom: var(--margin);
   border: transparent;
   border-bottom: var( --border);
+  background-color: var(--colorw);
 }
 
 #select-wrap {
