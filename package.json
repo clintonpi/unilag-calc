@@ -1,0 +1,38 @@
+{
+  "name": "unilag-calc",
+  "version": "1.0.0",
+  "description": "An admission aggregate calculator for the University of Lagos",
+  "main": "",
+  "scripts": {
+    "build": "babel js -d dist/js",
+    "clean": "rm -r dist && mkdir dist",
+    "clean-build": "npm run clean && npm run build",
+    "lint": "eslint ./ || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clintonpi/unilag-calc.git"
+  },
+  "keywords": [
+    "university of lagos",
+    "unilag",
+    "unilag-calc",
+    "admission aggregate calculator",
+    "admission",
+    "aggregate",
+    "calculator"
+  ],
+  "author": "Clinton Nkwocha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clintonpi/unilag-calc/issues"
+  },
+  "homepage": "https://github.com/clintonpi/unilag-calc#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0"
+  }
+}
