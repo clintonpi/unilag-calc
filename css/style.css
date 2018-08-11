@@ -159,10 +159,25 @@ footer {
   width: 100%;
   padding-bottom: 10px;
   font-size: 1.2rem;
-} 
+}
 
 footer b, footer a {
   color: var(--colorb);
+}
+
+#info {
+  font-size: 1.2rem;
+  background: var(--colorb);
+  color: var(--colorw);
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#info a {
+  color: var(--colorw);
 }
 
 /* media queries */
@@ -173,5 +188,11 @@ footer b, footer a {
 
   .card h2 {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-height: 620px) {
+  #info {
+    position: static;
   }
 }
