@@ -191,7 +191,7 @@ footer b, footer a {
   }
 }
 
-@media (max-height: 620px) {
+@media (max-height: 640px) {
   #info {
     position: static;
   }
